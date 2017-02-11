@@ -1,9 +1,13 @@
 CFLAGS=-Wall -g
 
-all:
-	make ex1
-	make ex3
+SRCS = $(wildcard *.c)
+
+PROGS = $(patsubst %.c,%,$(SRCS))
+
+all: $(PROGS)
+
+%: %.c
+	$(CC) $(CFLAGS) -o $@ $<
 
 clean:
-	rm -f ex1
-	rm -f ex3
+	rm -f $(PROGS)
