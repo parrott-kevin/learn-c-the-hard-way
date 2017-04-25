@@ -38,4 +38,5 @@
 *.dSYM/
 *.su
 
+.DS_Store
  book
